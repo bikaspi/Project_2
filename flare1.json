@@ -1,0 +1,173 @@
+{
+    "name": "Items",
+    "children": [
+     {
+      "name": "Denver",
+      "children": [
+       {
+        "name": "Dangerous",
+        "children": [
+            {"name": "Ammunition", "size": 114},
+            
+            {
+                "name": "Firearms",
+                "children":[
+                    {"name": "Firearm Parts", "size": 331},
+                    {"name": "Firearm Replicas", "size": 6}
+                ]
+            },
+            {"name": "Explosive Device", "size": 1}
+        ]    
+        },
+    
+     
+      
+        {"name": "Cutting Items", "size": 97},
+        {"name": "Bio", "size": 0},
+        {
+            "name": "Interesting",
+            "children": [
+                {"name": "Flares", "size": 2},
+                {"name": "Hand Granades", "size": 11},
+                {"name": "Bludgeoning", "size": 18},
+                {"name": "Fireworks", "size": 8}
+            ]
+        },
+        {
+            "name": "Self Defense",
+            "children": [
+                {"name": "Pepper Spray", "size": 4},
+                {"name": "Martial Arts", "size": 211},
+                {"name": "Shocking Device", "size": 49}
+            ]
+        },
+        {
+            "name": "Chemical",
+            "children": [
+                {"name": "Fuel", "size": 5},
+                {"name": "Paint", "size": 1}
+            ]
+        }
+    ]  
+    },    
+
+
+        
+    {
+        "name": "Phoenix",
+        "children": [
+         {
+          "name": "Dangerous",
+          "children": [
+              {"name": "Ammunition", "size": 65},
+              
+              {
+                  "name": "Firearms",
+                  "children":[
+                      {"name": "Firearm Parts", "size": 267},
+                      {"name": "Firearm Replicas", "size": 12}
+                  ]
+              },
+              {"name": "Explosive Device", "size": 1}
+          ]    
+          },
+      
+       
+        
+          {"name": "Cutting Items", "size": 82},
+          {"name": "Bio", "size": 0},
+          {
+              "name": "Interesting",
+              "children": [
+                  {"name": "Flares", "size": 0},
+                  {"name": "Hand Granades", "size": 3},
+                  {"name": "Bludgeoning", "size": 75},
+                  {"name": "Fireworks", "size": 7}
+              ]
+          },
+          {
+              "name": "Self Defense",
+              "children": [
+                  {"name": "Pepper Spray", "size": 201},
+                  {"name": "Martial Arts", "size": 53},
+                  {"name": "Shocking Device", "size": 37}
+              ]
+          },
+          {
+              "name": "Chemical",
+              "children": [
+                  {"name": "Fuel", "size": 0},
+                  {"name": "Paint", "size": 2}
+              ]
+          }
+      ]  
+      },    
+  
+       {
+        "name": "Las Vegas",
+        "children": [
+         {"name": "Ammo", "size": 17010},
+         {"name": "StunGuns", "size": 5842},
+         {"name": "Firearms", "size": 2202},
+         {"name": "MartialArts", "size": 8746},
+         {
+          "name": "Misc",
+          "children": [
+           {"name": "Ammunition", "size": 1983},
+           {"name": "CuttingItems", "size": 2047},
+           {"name": "HandGranades", "size": 1375}
+           
+          ]
+         },
+         {"name": "Fireworks", "size": 1041},
+         {"name": "Replica", "size": 5176},
+         {"name": "PelletGuns", "size": 449},
+         {"name": "Bludgeoning", "size": 5593}
+        ]
+       },
+       {
+        "name": "Dallas",
+        "children": [
+         {"name": "Ammo", "size": 17010},
+         {"name": "Firearms", "size": 5842},
+         {"name": "Ammunition", "size": 2202},
+         {"name": "HandGranades", "size": 8746},
+         {
+          "name": "Sharp",
+          "children": [
+           {"name": "MartialArts", "size": 1983},
+           {"name": "CuttingItems", "size": 2047},
+           {"name": "StunGuns", "size": 1375}
+           
+          ]
+         }
+        
+        ]
+       },
+       {
+        "name": "Salt Lake City",
+        "children": [
+         {"name": "Flares", "size": 17010},
+         {"name": "StunGuns", "size": 5842},
+         {"name": "CuttingItems", "size": 2202},
+         {"name": "MartialArts", "size": 8746},
+         {
+          "name": "HandCarry",
+          "children": [
+           {"name": "Bludgeoning", "size": 1983},
+           {"name": "CuttingItems", "size": 2047},
+           {"name": "HandGranades", "size": 1375}
+           
+          ]
+         },
+         {"name": "Fireworks", "size": 1041},
+         {"name": "PepperSpray", "size": 5176},
+         {"name": "Flares", "size": 449},
+         {"name": "RadioAgent", "size": 5593}
+        ]
+       }
+    
+       
+       
+    ]
+    }       
