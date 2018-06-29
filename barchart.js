@@ -19,7 +19,8 @@
         // 		return ((d != "Year") & (d != "State"));
         // 	});
         var elements = Object.keys(data[0]).filter((d) => d != 'Items' && d != 'Grand Total');
-        var selection = 'Grand Total';
+        //var selection = 'Grand Total';
+        var selection = elements[0];
 
         var y = d3.scale.linear()
                 .domain([0, d3.max(data, function(d){

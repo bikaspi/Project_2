@@ -103,70 +103,156 @@
       ]  
       },    
   
-       {
+      {
         "name": "Las Vegas",
         "children": [
-         {"name": "Ammo", "size": 17010},
-         {"name": "StunGuns", "size": 5842},
-         {"name": "Firearms", "size": 2202},
-         {"name": "MartialArts", "size": 8746},
          {
-          "name": "Misc",
+          "name": "Dangerous",
           "children": [
-           {"name": "Ammunition", "size": 1983},
-           {"name": "CuttingItems", "size": 2047},
-           {"name": "HandGranades", "size": 1375}
-           
-          ]
-         },
-         {"name": "Fireworks", "size": 1041},
-         {"name": "Replica", "size": 5176},
-         {"name": "PelletGuns", "size": 449},
-         {"name": "Bludgeoning", "size": 5593}
-        ]
-       },
-       {
+              {"name": "Ammunition", "size": 28},
+              
+              {
+                  "name": "Firearms",
+                  "children":[
+                      {"name": "Firearm Parts", "size": 362},
+                      {"name": "Firearm Replicas", "size": 43}
+                  ]
+              },
+              {"name": "Explosive Device", "size": 2}
+          ]    
+          },
+      
+       
+        
+          {"name": "Cutting Items", "size": 38},
+          {"name": "Bio", "size": 0},
+          {
+              "name": "Interesting",
+              "children": [
+                  {"name": "Flares", "size": 0},
+                  {"name": "Hand Granades", "size": 15},
+                  {"name": "Bludgeoning", "size": 54},
+                  {"name": "Fireworks", "size": 5}
+              ]
+          },
+          {
+              "name": "Self Defense",
+              "children": [
+                  {"name": "Pepper Spray", "size": 0},
+                  {"name": "Martial Arts", "size": 77},
+                  {"name": "Shocking Device", "size": 62}
+              ]
+          },
+          {
+              "name": "Chemical",
+              "children": [
+                  {"name": "Fuel", "size": 0},
+                  {"name": "Paint", "size": 2}
+              ]
+          }
+      ]  
+      },    
+  
+      {
+        "name": "Salt Lake",
+        "children": [
+         {
+          "name": "Dangerous",
+          "children": [
+              {"name": "Ammunition", "size": 74},
+              
+              {
+                  "name": "Firearms",
+                  "children":[
+                      {"name": "Firearm Parts", "size": 187},
+                      {"name": "Firearm Replicas", "size": 2}
+                  ]
+              },
+              {"name": "Explosive Device", "size": 0}
+          ]    
+          },
+      
+       
+        
+          {"name": "Cutting Items", "size": 52},
+          {"name": "Bio", "size": 0},
+          {
+              "name": "Interesting",
+              "children": [
+                  {"name": "Flares", "size": 2},
+                  {"name": "Hand Granades", "size": 5},
+                  {"name": "Bludgeoning", "size": 13},
+                  {"name": "Fireworks", "size": 16}
+              ]
+          },
+          {
+              "name": "Self Defense",
+              "children": [
+                  {"name": "Pepper Spray", "size": 23},
+                  {"name": "Martial Arts", "size": 72},
+                  {"name": "Shocking Device", "size": 19}
+              ]
+          },
+          {
+              "name": "Chemical",
+              "children": [
+                  {"name": "Fuel", "size": 1},
+                  {"name": "Paint", "size": 4}
+              ]
+          }
+      ]  
+      },    
+  
+      {
         "name": "Dallas",
         "children": [
-         {"name": "Ammo", "size": 17010},
-         {"name": "Firearms", "size": 5842},
-         {"name": "Ammunition", "size": 2202},
-         {"name": "HandGranades", "size": 8746},
          {
-          "name": "Sharp",
+          "name": "Dangerous",
           "children": [
-           {"name": "MartialArts", "size": 1983},
-           {"name": "CuttingItems", "size": 2047},
-           {"name": "StunGuns", "size": 1375}
-           
-          ]
-         }
+              {"name": "Ammunition", "size": 107},
+              
+              {
+                  "name": "Firearms",
+                  "children":[
+                      {"name": "Firearm Parts", "size": 308},
+                      {"name": "Firearm Replicas", "size": 10}
+                  ]
+              },
+              {"name": "Explosive Device", "size": 0}
+          ]    
+          },
+      
+       
         
-        ]
-       },
-       {
-        "name": "Salt Lake City",
-        "children": [
-         {"name": "Flares", "size": 17010},
-         {"name": "StunGuns", "size": 5842},
-         {"name": "CuttingItems", "size": 2202},
-         {"name": "MartialArts", "size": 8746},
-         {
-          "name": "HandCarry",
-          "children": [
-           {"name": "Bludgeoning", "size": 1983},
-           {"name": "CuttingItems", "size": 2047},
-           {"name": "HandGranades", "size": 1375}
-           
-          ]
-         },
-         {"name": "Fireworks", "size": 1041},
-         {"name": "PepperSpray", "size": 5176},
-         {"name": "Flares", "size": 449},
-         {"name": "RadioAgent", "size": 5593}
-        ]
-       }
-    
+          {"name": "Cutting Items", "size": 32},
+          {"name": "Bio", "size": 0},
+          {
+              "name": "Interesting",
+              "children": [
+                  {"name": "Flares", "size": 2},
+                  {"name": "Hand Granades", "size": 5},
+                  {"name": "Bludgeoning", "size": 1},
+                  {"name": "Fireworks", "size": 1}
+              ]
+          },
+          {
+              "name": "Self Defense",
+              "children": [
+                  {"name": "Pepper Spray", "size": 1},
+                  {"name": "Martial Arts", "size": 20},
+                  {"name": "Shocking Device", "size": 81}
+              ]
+          },
+          {
+              "name": "Chemical",
+              "children": [
+                  {"name": "Fuel", "size": 1},
+                  {"name": "Paint", "size": 3}
+              ]
+          }
+      ]  
+      }   
+  
        
        
     ]
