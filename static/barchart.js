@@ -9,7 +9,7 @@
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("sunburst_data.csv", function(error, data){
+    d3.csv("/static/sunburst_data.csv", function(error, data){
 
         // // filter year
         // var data = data.filter(function(d){return d.Year == '2012';});
