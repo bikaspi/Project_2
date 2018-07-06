@@ -3,26 +3,38 @@ path {
     fill-rule: evenodd;
   }
   
-  text {
+text {
     font-family: Arial, sans-serif;
     font-size: 12px;
   }
 
-  .rectangle {
+.rectangle {
     fill: steelblue;
   }
-  .rectangle:hover {
+.rectangle:hover {
     fill: orange;
   }
-  .axis {
+.axis {
     font: 10px sans-serif;
   }
   
-  .axis path,
-  .axis line {
+.axis path,
+.axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
   }
   
+#Usamap {
+  height: 400px;
+  width: 600px;
+}
 
+.popup-title { 
+  color: red;
+  font-size: 15px;
+}
+.total {
+  color: blue;
+  font-size: 12px;
+}

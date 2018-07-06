@@ -1,89 +1,60 @@
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, inspect, func
+from collections import defaultdict
 
 from flask import (
     Flask,
     render_template,
     jsonify)
-
-engine2 = create_engine("sqlite:///db/mergemap.sqlite", echo=False)
-engine = create_engine("sqlite:///db/itemsdb.sqlite", echo=False)
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session, subqueryload
+from sqlalchemy import create_engine, inspect, func
 
 Base = automap_base()
+
+
+class Incident(Base):
+    __tablename__ = 'incident'
+    index = sqlalchemy.Column('index', sqlalchemy.BigInteger, primary_key=True)
+    name = sqlalchemy.Column('name', sqlalchemy.String)
+    latitude = sqlalchemy.Column('latitude', sqlalchemy.Float)
+    longitude = sqlalchemy.Column('longitude', sqlalchemy.Float)
+    item = sqlalchemy.Column('item', sqlalchemy.String)
+    date = sqlalchemy.Column('date', sqlalchemy.Date)
+
+
+engine = create_engine("sqlite:///db/mergemap.sqlite", echo=False)
 Base.prepare(engine, reflect=True)
 session = Session(engine)
-
-Items=Base.classes.itemstb
-session = Session(engine)
-
-Base2 = automap_base()
-Base2.prepare(engine2, reflect=True)
-Base2.classes.keys()
-Mergemap=Base2.classes.mergemaptb
-session2=Session(engine2)
+Incident=Base.classes.mergemaptb
 
 app = Flask(__name__)
 
 
-# @app.route("/data")
-
-# def data():
-
-#     sel = [Items.airport_name, func.count(Items.item)]
-#     results = session.query(*sel).group_by(Items.airport_name).all()
-#     x_axis=[result[0] for result in results]
-#     y_axis=[result[1] for result in results]
-
-#     trace={
-#         "x":x_axis,
-#         "y":y_axis,
-#         "type":'bar'
-#     }
-    
-#     return jsonify(trace)
-
-# @app.route("/bardata")
-
-# def data():
-
-#     sel = [Items.airport_name, func.count(Items.item)]
-#     results = session.query(*sel).group_by(Items.airport_name).all()
-#     # x_axis=[result[0] for result in results]
-#     # y_axis=[result[1] for result in results]
-
-#     # trace={
-#     #     "x":x_axis,
-#     #     "y":y_axis,
-#     #     "type":'bar'
-#     # }
-    
-#     return jsonify(results)
-
 @app.route("/data")
-
-def geo():
-    sel = [Mergemap.airport_name, Mergemap.latitude_deg, Mergemap.longitude_deg,Mergemap.item]
-    data = session2.query(*sel).all()
-    
+def data():
+    sel = [Incident.airport_name, Incident.latitude_deg,
+           Incident.longitude_deg, Incident.item, func.count(Incident.item)]
+    records = session.query(*sel).group_by(Incident.airport_name, Incident.item).all()
     results = {}
-    for datapoint in data:
-        name, lat, lon, weapon = datapoint
+    for record in records:
+        name, lat, long, item, count = record
         if name not in results:
             results[name] = {
-                "lat": lat,
-                "lon": lon,
-                "weapons": {}
+                "name": name,
+                # "lat": lat,
+                # "long": long,
+                "coords": (lat,long),
+                "items": {}
             }
-        if weapon in results[name]["weapons"]:
-            results[name]["weapons"][weapon] += 1
-        else:
-            results[name]["weapons"][weapon] = 1    
-    return jsonify(results)
+        results[name]["items"][item] = count
+        # print(results)
+    return jsonify(list(results.values()))
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,117 +1,62 @@
-// Store our API endpoint inside queryUrl
-var queryURL = "/data";
+var mymap = L.map('Usamap').setView([40, -100], 4);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  maxZoom: 18,
+  id: 'mapbox.streets',
+  accessToken: 'pk.eyJ1IjoiYmlrcmFtYiIsImEiOiJjamlkdmxmcjkwZndqM3BxeXNlOTFuc2p0In0.J-qC7UvQMoLqUE5v1yKFgA'
+}).addTo(mymap);
 
-// Perform a GET request to the query URL
-d3.json(queryURL, function(data) {
-    console.log(data)
-    // Once we get a response, send the data.features object to the createFeatures function
-    createFeatures(data);
-})
+// Until you put in your api key, this code won't work.
+//console.error("Make sure the 'accessToken' on main.js:6 is your real api key.");
 
-function createFeatures(earthquakeData) {
+var markers = [];
+var items = new Set;
+var selector = document.querySelector("#choice");
 
-    // Define a function we want to run once for each feature in the features array
-    // Give each feature a popup describing the place and time of the earthquake
-    function onEachFeature(feature, layer) {
-      layer.bindPopup("<h3>" + feature.properties.place +
-        "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
-    }
-  
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
-    // Run the onEachFeature function once for each piece of data in the array
-    var earthquakes = L.geoJSON(earthquakeData, {
-      onEachFeature: onEachFeature,
-      pointToLayer: function (feature, latlng) {
-        var color;
-        var r = 255;
-        var g = Math.floor(255-80*feature.properties.mag);
-        var b = Math.floor(255-80*feature.properties.mag);
-        color= "rgb("+r+" ,"+g+","+ b+")"
-        
-        var geojsonMarkerOptions = {
-          radius: 5*feature.properties.mag,
-          fillColor: color,
-          color: "black",
-          weight: 1,
-          opacity: 1,
-          fillOpacity: 0.8
-        };
-        return L.circleMarker(latlng, geojsonMarkerOptions);
+d3.json('/data', function (data) {
+  data.forEach(function (datapoint) {
+    marker = L.circleMarker(datapoint.coords,
+      {
+        items: datapoint.items,
+        name: datapoint.name,
+        radius: 10,
+        fillColor: "red",
+        color: "black",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
       }
+    );
+    var popup = "<h3>" + datapoint.name + "</h3>";
+    Object.entries(datapoint.items).forEach(function(item_count) {
+      popup += "<p>" + item_count[0] + ": " + item_count[1] + "</p>"
     });
-  
-  
-    // Sending our earthquakes layer to the createMap function
-    createMap(earthquakes);
-  }
-  
-  function createMap(earthquakes) {
-  
-    // Define streetmap and darkmap layers
-    var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
-      "access_token=pk.eyJ1IjoiYnVtYmFsb3JkIiwiYSI6ImNqaWNhZ2d1bjAxOHoza3BqcDQzMHR3Z3AifQ.KzBDaZozIdwa38NsQZslfw");
-  
-    var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?" +
-      "access_token=pk.eyJ1IjoiYmlrcmFtYiIsImEiOiJjamlkdmxmcjkwZndqM3BxeXNlOTFuc2p0In0.J-qC7UvQMoLqUE5v1yKFgA");
-  
-    // Define a baseMaps object to hold our base layers
-    var baseMaps = {
-      "Street Map": streetmap,
-      "Dark Map": darkmap
-    };
-  
-    // Create overlay object to hold our overlay layer
-    var overlayMaps = {
-      Earthquakes: earthquakes
-    };
-  
-    // Create our map, giving it the streetmap and earthquakes layers to display on load
-    var myMap = L.map("map", {
-      center: [
-        37.09, -95.71
-      ],
-      zoom: 5,
-      layers: [streetmap, earthquakes]
+    marker.bindPopup(popup);
+    markers.push(marker);
+    marker.addTo(mymap);
+    Object.keys(datapoint.items).forEach(function (item) {
+      items.add(item);
     });
-  
-    // Create a layer control
-    // Pass in our baseMaps and overlayMaps
-    // Add the layer control to the map
-    L.control.layers(baseMaps, overlayMaps, {
-      collapsed: false
-    }).addTo(myMap);
-  
-    function getColor(d) {
-      return d < 1 ? 'rgb(255,245,265)' :
-            d < 2  ? 'rgb(255,180,220)' :
-            d < 3  ? 'rgb(255,185,200)' :
-            d < 4  ? 'rgb(255,100,80)' :
-            d < 5  ? 'rgb(255,65,55)' :
-                     'rgb(255,0,0)';
+  });
+
+  items.forEach(function (item) {
+    const option = document.createElement('option');
+    option.innerHTML = item;
+    selector.appendChild(option);
+  });
+});
+
+selector.addEventListener('change', function () {
+  const selected = this.value;
+  markers.forEach(function (marker) {
+    if (Object.keys(marker.options.items).includes(selected) || selected == '') {
+      marker.setRadius(100*marker.options.items[selected]/300);
+      var popupContent = "<h3 class='popup-title'>" + marker.options.name + "</h3><hr>";
+      popupContent += "<p class='total'>" + selected + ": " + marker.options.items[selected] + "</p>";
+      marker._popup.setContent(popupContent);
+    } else {
+      marker.setRadius(0);
     }
-    
-    // Create a legend to display information about our map
-    var legend = L.control({position: 'bottomright'});
-    
-    legend.onAdd = function (map) {
-    
-      var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 1, 2, 3, 4],
-      labels = [];
-    
-      div.innerHTML+='Magnitude<br><hr>'
-    
-      // loop through our density intervals and generate a label with a colored square for each interval
-      for (var i = 0; i < grades.length; i++) {
-          div.innerHTML +=
-              '<i style="background:' + getColor(grades[i] + 1) + '">&nbsp&nbsp&nbsp&nbsp</i> ' +
-              grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
-    
-    return div;
-    };
-    
-    legend.addTo(myMap);
-    
-     
-  }
+  });
+});
+
