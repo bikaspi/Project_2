@@ -1,3 +1,4 @@
+
 path {
     stroke: #fff;
     fill-rule: evenodd;
@@ -37,4 +38,68 @@ text {
 .total {
   color: blue;
   font-size: 12px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #bb0000;
+  color: white;
+}
+
+.jumbotron {
+  background-image:url('../..Ammunition.jpg');
+  background-repeat:no-repeat;
+  background-position: right top;
+  background-color:green;
+
+}
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.middle {
+  text-align: center;
+  font-size:2em;
+  color:black;
+}
+img {
+  display: inline-block;
 }
