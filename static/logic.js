@@ -60,3 +60,23 @@ selector.addEventListener('change', function () {
   });
 });
 
+
+
+function mapGenerator(option) {
+  markers.forEach(function (marker) {
+    if (Object.keys(marker.options.items).includes(option) || option == '') {
+      marker.setRadius(100*marker.options.items[option]/300);
+      var popupContent = "<h3 class='popup-title'>" + marker.options.name + "</h3><hr>";
+      popupContent += "<p class='total'>" + option + ": " + marker.options.items[option] + "</p>";
+      marker._popup.setContent(popupContent);
+    } else {
+      marker.setRadius(0);
+    }
+  });
+}
+
+
+d3.selectAll('.header-image').on('click', function(event){
+  var searchTerm = this.title;
+  mapGenerator(searchTerm)
+})
