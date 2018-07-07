@@ -79,13 +79,13 @@ text {
   color: white;
 }
 
-.jumbotron {
+/* .jumbotron {
   background-image:url('../..Ammunition.jpg');
   background-repeat:no-repeat;
   background-position: right top;
   background-color:green;
 
-}
+} */
 h1 { 
   display: block;
   font-size: 2em;
@@ -120,4 +120,23 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+#header-image {
+  height: 100px;
+  width: 125px;
+  padding:6px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.container-fluid {
+  margin-top:-50px;
+  margin-bottom: -50px;
+  
 }
