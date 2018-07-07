@@ -30,7 +30,10 @@
                 .range([height, 0]);
 
         var x = d3.scale.ordinal()
-                .domain(data.map(function(d){ return d.items;}))
+                .domain(data.map(function(d){ 
+                    console.log(d)
+                    return d.Items;}))
+                
                 .rangeBands([0, width]);
 
 
@@ -75,7 +78,7 @@
             })
             .append("title")
             .text(function(d){
-                return d.items + " : " + d[selection];
+                return d.Items + " : " + d[selection];
             });
 
         var selector = d3.select("#drop")

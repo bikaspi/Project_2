@@ -19,34 +19,48 @@
  
 
     <!-- Add font awesome icons -->
-    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-    <a href="https://twitter.com/" class="fa fa-twitter"></a>
-    <a href="https://www.google.com/" class="fa fa-google"></a>
-    <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
-    <a href="https://www.pinterest.com/" class="fa fa-pinterest"></a>
-    
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Social Media</h4>
+        <h5>Follow, share and be a part of the conversation with TSA</h5>
+        <a href="https://www.facebook.com/TSA/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/tsa/" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/tsa/" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/tsa//" class="fa fa-instagram"></a>
+        
+      </div>
+      <div class="col-md-6" id="links">
+        <h3>News and buzz</h3>
+        <ul>
+          <a href = "https://www.cnbc.com/video/2018/07/06/what-it-takes-to-join-the-tsa.html">What it takes to join the TSA</a><br>
+          <a href = "https://www.news10.com/news/local-news/new-tsa-rules-mean-flyers-may-need-new-id/1287955462">New TSA rules mean flyers may need ID</a><br>
+          <a href = "https://www.tsa.gov/travel/transporting-firearms-and-ammunition">Transporting Firearms and Ammunition</a>
+        </ul>
+      </div> 
+    </div>   
+        
     <header class="jumbotron" id='box'>
       <div class="container-fluid">
   
         <div class="row">
-          <img id='header-image' src="/static/assets/Ammunition.jpg"></img>
-          <img id='header-image' src="/static/assets/Bludgeon.jpg"></img>
-          <img id='header-image' src="/static/assets/cutting_items.jpg"></img>
-          <img id='header-image' src="/static/assets/Explosive_device.jpg"></img>
-          <img id='header-image' src="/static/assets/firearm_replica.jpeg"></img>
-          <img id='header-image' src="/static/assets/Firearms.jpg"></img>
-          <img id='header-image' src="/static/assets/fireworks.jpg"></img>
-          <img id='header-image' src="/static/assets/Flare.jpg"></img>
+          <img class='header-image' src="/static/assets/Ammunition.jpg" alt="" title="Ammunition"></img>
+          <img class='header-image' src="/static/assets/Bludgeon.jpg" alt="" title="Bludgeoning"></img>
+          <img class='header-image' src="/static/assets/cutting_items.jpg" alt="" title="Cutting Items"></img>
+          <img class='header-image' src="/static/assets/Explosive_device.jpg"alt="" title="Explosive Device"></img>
+          <img class='header-image' src="/static/assets/firearm_replica.jpeg"alt="" title="Firearm Replicas"></img>
+          <img class='header-image' src="/static/assets/Firearms.jpg"alt="" title="Firearms"></img>
+          <img class='header-image' src="/static/assets/fireworks.jpg"alt="" title="Fireworks"></img>
+          <img class='header-image' src="/static/assets/Flare.jpg"alt="" title="Flare"></img>
         </div>
        <div class="row">
-          <img id='header-image' src="/static/assets/grenade.jpg"></img>
-          <img id='header-image' src="/static/assets/Mace.png"></img>
-          <img id='header-image' src="/static/assets/Martial_arts.jpg"></img>
-          <img id='header-image' src="/static/assets/paint_thinner.jpg"></img>
-          <img id='header-image' src="/static/assets/partof_firearms.jpg"></img>
-          <img id='header-image' src="/static/assets/radioactive_agent.jpg"></img>
-          <img id='header-image' src="/static/assets/shocking_device.jpg"></img>
-          <img id='header-image' src="/static/assets/spear_gun.jpg"></img>
+          <img class='header-image' src="/static/assets/grenade.jpg"alt="" title="Grenade"></img>
+          <img class='header-image' src="/static/assets/Mace.png"alt="" title="Mace"></img>
+          <img class='header-image' src="/static/assets/Martial_arts.jpg"alt="" title="Martial Arts"></img>
+          <img class='header-image' src="/static/assets/paint_thinner.jpg"alt="" title="Paint Thinner"></img>
+          <img class='header-image' src="/static/assets/partof_firearms.jpg"alt="" title="Firearm Parts"></img>
+          <img class='header-image' src="/static/assets/radioactive_agent.jpg"alt="" title="Radioactive Agent"></img>
+          <img class='header-image' src="/static/assets/shocking_device.jpg"alt="" title="Shocking Device"></img>
+          <img class='header-image' src="/static/assets/spear_gun.jpg"alt="" title="Spear Gun"></img>
       </div>
     </div>
   
@@ -71,13 +85,13 @@
       In 2015, the TSA(Transportation Security Administration) confiscated a total of 22,044 "dangerous items" in airport security screenings around the U.S.
     </p>
     <p>
-      Use the graphic below to see what those items were and how many were found in each U.S. airport.
+      The items ranged from very dangerous to interesting to strange.
     </p>
     <p class='middle'>
       Dangerous items Confiscated by the TSA in 2015
     </p>
     <p>
-      The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images below. Select an item from the dropdown below to see how many times that item was found in each U.S. airport last year.
+      The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images above. Select an item from the dropdown below to see how many times that item was found in each U.S. airport last year.
     </p>
     <!-- <div class="row">
       <div class="col-md-12">
@@ -93,8 +107,10 @@
         </select>
       </div>
       <div class="col-md-5">
+          <p>The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images above. Select an item from the dropdown below to see how many times that item was found in each U.S. airport last year.</p>
+
           
-        <h2>Top 5 Airports by Dangerous Items Confiscated in 2015</h2>
+        <!-- <h2>Top 5 Airports by Dangerous Items Confiscated in 2015</h2>
 
         <table>
           <tr>
@@ -126,7 +142,7 @@
             <td>Salt Lake City</td>
             <td>549</td>
             <td>25</td>
-          </tr>
+          </tr> -->
           <!-- <tr>
             <td>Seattle/Tacoma</td>
             <td>496</td>
@@ -156,10 +172,7 @@
       </div>
   </div>
   <p>
-    jdfjdskfjdsfjdskffdfjkdjfkdf
-    ndkfjkdjfkdsjfkd
-    kdfkdfmkdnkfjdkfj
-    dfjkdjfkdf
+      The airports with the most dangerous items confiscated are not always the ones with the most passenger traffic. The bar chart allows user to select the top 10 airports by dangerous items confiscated in 2015 and gives the total count for each items.
   </p>
   <div class="row">
         <div class="col-md-6">

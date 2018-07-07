@@ -64,20 +64,17 @@ text {
   color: white;
 }
 
-.fa-google {
-  background: #dd4b39;
-  color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-pinterest {
+.fa-youtube {
   background: #bb0000;
   color: white;
 }
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
 
 /* .jumbotron {
   background-image:url('../..Ammunition.jpg');
@@ -94,6 +91,7 @@ h1 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  color: green;
 }
 .middle {
   text-align: center;
@@ -122,7 +120,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-#header-image {
+.header-image {
   height: 100px;
   width: 125px;
   padding:6px;
@@ -139,4 +137,19 @@ img {
   margin-top:-50px;
   margin-bottom: -50px;
   
+}
+#links {
+  text-align: right;
+}
+h4 {
+  color: blue;
+}
+
+body {
+  margin: 5%;
+  background-color: white;
+
+}
+.jumbotron {
+  color: blue;
 }
