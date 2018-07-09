@@ -28,7 +28,7 @@ text {
   
 #Usamap {
   height: 400px;
-  width: 600px;
+  width: 1200px;
 }
 
 .popup-title { 
@@ -105,15 +105,15 @@ img {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
-  height: auto;
+  width: 700px;
+  height: 150px;
   overflow-y: scroll;
 }
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 1px;
 }
 
 tr:nth-child(even) {
@@ -152,4 +152,8 @@ body {
 }
 .jumbotron {
   color: blue;
+}
+#sunburst {
+  width: 2000px;
+  height: 600px;
 }

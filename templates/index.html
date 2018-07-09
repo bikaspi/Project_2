@@ -45,9 +45,9 @@
         <div class="row">
           <img class='header-image' src="/static/assets/Ammunition.jpg" alt="" title="Ammunition"></img>
           <img class='header-image' src="/static/assets/Bludgeon.jpg" alt="" title="Bludgeoning"></img>
-          <img class='header-image' src="/static/assets/cutting_items.jpg" alt="" title="Cutting Items"></img>
-          <img class='header-image' src="/static/assets/Explosive_device.jpg"alt="" title="Explosive Device"></img>
-          <img class='header-image' src="/static/assets/firearm_replica.jpeg"alt="" title="Firearm Replicas"></img>
+          <img class='header-image' src="/static/assets/cutting_items.jpg" alt="" title="CuttingItems"></img>
+          <img class='header-image' src="/static/assets/Explosive_device.jpg"alt="" title="ExplosiveDevice"></img>
+          <img class='header-image' src="/static/assets/firearm_replica.jpeg"alt="" title="Firearmreplicas"></img>
           <img class='header-image' src="/static/assets/Firearms.jpg"alt="" title="Firearms"></img>
           <img class='header-image' src="/static/assets/fireworks.jpg"alt="" title="Fireworks"></img>
           <img class='header-image' src="/static/assets/Flare.jpg"alt="" title="Flare"></img>
@@ -55,12 +55,12 @@
        <div class="row">
           <img class='header-image' src="/static/assets/grenade.jpg"alt="" title="Grenade"></img>
           <img class='header-image' src="/static/assets/Mace.png"alt="" title="Mace"></img>
-          <img class='header-image' src="/static/assets/Martial_arts.jpg"alt="" title="Martial Arts"></img>
-          <img class='header-image' src="/static/assets/paint_thinner.jpg"alt="" title="Paint Thinner"></img>
-          <img class='header-image' src="/static/assets/partof_firearms.jpg"alt="" title="Firearm Parts"></img>
-          <img class='header-image' src="/static/assets/radioactive_agent.jpg"alt="" title="Radioactive Agent"></img>
-          <img class='header-image' src="/static/assets/shocking_device.jpg"alt="" title="Shocking Device"></img>
-          <img class='header-image' src="/static/assets/spear_gun.jpg"alt="" title="Spear Gun"></img>
+          <img class='header-image' src="/static/assets/Martial_arts.jpg"alt="" title="MartialArts"></img>
+          <img class='header-image' src="/static/assets/paint_thinner.jpg"alt="" title="PaintThinner"></img>
+          <img class='header-image' src="/static/assets/partof_firearms.jpg"alt="" title="FirearmParts"></img>
+          <img class='header-image' src="/static/assets/radioactive_agent.jpg"alt="" title="RadioactiveAgent"></img>
+          <img class='header-image' src="/static/assets/shocking_device.jpg"alt="" title="ShockingDevice"></img>
+          <img class='header-image' src="/static/assets/spear_gun.jpg"alt="" title="SpearGun"></img>
       </div>
     </div>
   
@@ -91,7 +91,7 @@
       Dangerous items Confiscated by the TSA in 2015
     </p>
     <p>
-      The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images above. Select an item from the dropdown below to see how many times that item was found in each U.S. airport last year.
+      The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images above. Select an item to see how many times that item was found in each U.S. airport last year.
     </p>
     <!-- <div class="row">
       <div class="col-md-12">
@@ -100,15 +100,14 @@
     </div> -->
     
     <div class="row">
-      <div class="col-md-7">
+      
         <div id="Usamap"></div>
         <select name="" id="choice">
           <option></option>
         </select>
-      </div>
-      <div class="col-md-5">
-          <p>The TSA classifies "dangerous items" according to 16 categories, represented by the 16 images above. Select an item from the dropdown below to see how many times that item was found in each U.S. airport last year.</p>
-
+    </div>
+      
+          
           
         <!-- <h2>Top 5 Airports by Dangerous Items Confiscated in 2015</h2>
 
@@ -168,23 +167,87 @@
             <td>422</td>
             <td>14</td>
           </tr> -->
-        </table>
-      </div>
-  </div>
-  <p>
-      The airports with the most dangerous items confiscated are not always the ones with the most passenger traffic. The bar chart allows user to select the top 10 airports by dangerous items confiscated in 2015 and gives the total count for each items.
-  </p>
+        
+  
   <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div id="drop" align=center></div>
         </div>
+        <div class="col-md-5">
+            <p>
+                The airports with the most dangerous items confiscated are not always the ones with the most passenger traffic. Use the bar chart to select the top 10 airports by dangerous items confiscated in 2015 to see how many times that item was found in each of those airports.
+            </p>
+             <h2>Top 5 Airports by Dangerous Items Confiscated in 2015</h2>
+
+        <table>
+          <tr>
+            <th>Airport</th>
+            <th>Dangerous Items Found</th>
+            <th>Ranking by Passenger Traffic</th>
+          </tr>
+          <tr>
+            <td>Denver</td>
+            <td>1,006</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Phoenix Sky Harbor</td>
+            <td>912</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>McCarran - Las Vegas</td>
+            <td>729</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>Dallas/Fort Worth</td>
+            <td>720</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Salt Lake City</td>
+            <td>549</td>
+            <td>25</td>
+          </tr> 
+          <!-- <tr>
+            <td>Seattle/Tacoma</td>
+            <td>496</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Atlanta</td>
+            <td>488</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Anchorage</td>
+            <td>434</td>
+            <td>55</td>
+          </tr>
+          <tr>
+            <td>George Bush - Houston</td>
+            <td>430</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Orlando</td>
+            <td>422</td>
+            <td>14</td>
+          </tr> -->
+        </table>
+
+        </div>
+    </div>   
+    <p>
+      Below is a zoomable sunburst diagram. Click on it to see the 5 airports and the types of items that were caught in each of those airports.
+    </p>
+    
+  <div class="row">
+      <div id="sunburst"></div>
+  </div>
   
-     
-      <div class="col-md-6">
-        <div id="sunburst"></div>
-      </div>
-  
-  </div>  
+   
     
  
 <script src="http://d3js.org/d3.v3.min.js"></script>

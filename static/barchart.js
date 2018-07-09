@@ -106,7 +106,7 @@
                     .ease("linear")
                     .select("title")
                     .text(function(d){
-                        return d.items + " : " + d[selection.value];
+                        return d.Items + " : " + d[selection.value];
                     });
         
                 d3.selectAll("g.y.axis")
