@@ -60,6 +60,11 @@ selector.addEventListener('change', function () {
   });
 });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a8144a01e5255f3a2134e45a918f2a8c8987d78e
 function mapGenerator(option) {
   markers.forEach(function (marker) {
     if (Object.keys(marker.options.items).includes(option) || option == '') {
@@ -71,11 +76,18 @@ function mapGenerator(option) {
       marker.setRadius(0);
     }
   });
+<<<<<<< HEAD
   
+=======
+>>>>>>> a8144a01e5255f3a2134e45a918f2a8c8987d78e
 }
 
 
 d3.selectAll('.header-image').on('click', function(event){
   var searchTerm = this.title;
   mapGenerator(searchTerm)
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> a8144a01e5255f3a2134e45a918f2a8c8987d78e
