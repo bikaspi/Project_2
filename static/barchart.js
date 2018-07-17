@@ -1,6 +1,6 @@
 (function() {
-    var margin = {top: 80, right: 180, bottom: 80, left: 180},
-        width = 800 - margin.left - margin.right,
+    var margin = {top: 80, right: 150, bottom: 80, left: 0},
+        width = 700 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
     var svg = d3.select("#drop").append("svg")
@@ -106,7 +106,7 @@
                     .ease("linear")
                     .select("title")
                     .text(function(d){
-                        return d.Items + " : " + d[selection.value];
+                        return d.items + " : " + d[selection.value];
                     });
         
                 d3.selectAll("g.y.axis")
