@@ -27,9 +27,9 @@ d3.json('/data', function (data) {
         fillOpacity: 0.8
       }
     );
-    var popup = "<h3>" + datapoint.name + "</h3>";
+    var popup = "<h3 class='popup-title'>" + datapoint.name + "</h3>";
     Object.entries(datapoint.items).forEach(function(item_count) {
-      popup += "<p>" + item_count[0] + ": " + item_count[1] + "</p>"
+      popup += "<p class='total'>" + item_count[0] + ": " + item_count[1] + "</p>"
     });
     marker.bindPopup(popup);
     markers.push(marker);
